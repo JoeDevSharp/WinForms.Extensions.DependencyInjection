@@ -1,28 +1,24 @@
-Claro, aquí tienes un README formal y profesional para tu módulo **WinForms.Extensions.DependencyInjection**:
-
----
-
 # WinForms.Extensions.DependencyInjection
 
-Integración avanzada de inyección de dependencias (DI) para aplicaciones Windows Forms. Basado en `Microsoft.Extensions.DependencyInjection`, pero adaptado y extendido para cubrir las necesidades específicas del desarrollo WinForms.
+Advanced Dependency Injection (DI) integration tailored for Windows Forms applications. Built on top of `Microsoft.Extensions.DependencyInjection`, but adapted and extended to address WinForms-specific development needs.
 
 ---
 
-## Características principales
+## Key Features
 
-- Construcción sencilla del contenedor DI con soporte nativo para WinForms.
-- Creación de formularios con ciclo de vida scoped para gestión automática de recursos.
-- Inyección de dependencias vía constructor o propiedades marcadas con `[Inject]`.
-- Interfaz `IInjectable` para inicialización tras inyección.
-- Singleton global para acceso cómodo al contenedor de servicios.
-- Facilita arquitecturas desacopladas y testables.
-- Complementa y se integra perfectamente con los frameworks `Reactive` y `RouteManager`.
+- Simplified DI container setup with native support for WinForms.
+- Scoped form creation for automatic lifecycle and resource management.
+- Dependency injection via constructor or `[Inject]`-marked properties.
+- `IInjectable` interface for post-injection initialization.
+- Global singleton access to the service provider.
+- Enables clean, decoupled, and testable architecture.
+- Seamless integration with companion frameworks `Reactive` and `RouteManager`.
 
 ---
 
-## Instalación
+## Installation
 
-Agrega el paquete desde NuGet o compílalo desde la fuente.
+Add the package via NuGet or build from source:
 
 ```bash
 dotnet add package WinForms.Extensions.DependencyInjection
@@ -30,9 +26,9 @@ dotnet add package WinForms.Extensions.DependencyInjection
 
 ---
 
-## Uso básico
+## Quick Start
 
-### Configuración en `Program.cs`
+### Setup in `Program.cs`
 
 ```csharp
 using Microsoft.Extensions.DependencyInjection;
@@ -40,7 +36,7 @@ using WinForms.Extensions.DependencyInjection.Bootstrap;
 
 var services = new ServiceCollection();
 
-// Registra tus servicios y formularios aquí
+// Register your services and forms here
 services.AddSingleton<IMainService, MainService>();
 services.AddTransient<MainForm>();
 services.AddSingleton<FormFactory>();
@@ -54,7 +50,7 @@ Application.Run(provider.GetRequiredService<MainForm>());
 
 ---
 
-### Crear formularios con scope
+### Creating scoped forms
 
 ```csharp
 var formFactory = provider.GetRequiredService<FormFactory>();
@@ -64,7 +60,7 @@ settingsForm.Show();
 
 ---
 
-### Inyección por propiedad con `[Inject]`
+### Property injection with `[Inject]`
 
 ```csharp
 public partial class MainForm : Form, IInjectable
@@ -80,36 +76,32 @@ public partial class MainForm : Form, IInjectable
 
     public void OnInjected()
     {
-        // Código tras inyección
+        // Initialization logic after injection
     }
 }
 ```
 
 ---
 
-## API pública
+## Public API
 
-- `ServiceProviderBuilder.BuildWinFormsServiceProvider(IServiceCollection)`: Construye el contenedor DI.
-- `FormFactory.CreateScopedForm<T>()`: Crea un formulario con su propio scope.
-- `[Inject]`: Atributo para marcar propiedades a inyectar.
-- `ResolveInjectedProperties(this object, IServiceProvider)`: Extensión para inyección automática por propiedad.
-- `IInjectable`: Interfaz para inicialización tras inyección.
-- `ServiceProviderGlobal.Instance`: Singleton con acceso global al proveedor DI.
-
----
-
-## Beneficios
-
-Este módulo resuelve los problemas comunes de usar DI en WinForms, integrándose de forma natural con la plataforma y respetando sus paradigmas, facilitando la migración hacia arquitecturas más modernas y mantenibles.
+- `ServiceProviderBuilder.BuildWinFormsServiceProvider(IServiceCollection)`: Builds the DI container.
+- `FormFactory.CreateScopedForm<T>()`: Creates a form with its own scoped lifetime.
+- `[Inject]`: Attribute to mark properties for injection.
+- `ResolveInjectedProperties(this object, IServiceProvider)`: Extension for automatic property injection.
+- `IInjectable`: Interface for post-injection initialization callback.
+- `ServiceProviderGlobal.Instance`: Singleton for global service provider access.
 
 ---
 
-## Repositorio y contribución
+## Benefits
+
+This module addresses common DI challenges in WinForms by integrating naturally with the platform and respecting its paradigms. It simplifies transitioning to modern, maintainable architectures.
+
+---
+
+## Repository and Contribution
 
 [https://github.com/JoeDevSharp/WinForms.Extensions.DependencyInjection](https://github.com/JoeDevSharp/WinForms.Extensions.DependencyInjection)
 
-Contribuciones, issues y pull requests son bienvenidos.
-
----
-
-¿Quieres que te prepare también ejemplos completos o una guía paso a paso para integrarlo en un proyecto real?
+Contributions, issues, and pull requests are welcome.
