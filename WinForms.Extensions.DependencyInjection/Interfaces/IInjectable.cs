@@ -1,13 +1,13 @@
 ﻿namespace WinForms.Extensions.DependencyInjection.Interfaces
 {
     /// <summary>
-    /// Interfaz que puede implementar cualquier clase para recibir una llamada
-    /// después de que se hayan resuelto las dependencias, ideal para inicializaciones.
+    /// Interface that can be implemented by any class to receive a callback
+    /// after its dependencies have been resolved. Ideal for performing initialization logic.
     /// </summary>
     public interface IInjectable
     {
         /// <summary>
-        /// Método llamado tras la inyección de dependencias.
+        /// Method invoked after dependency injection has been completed.
         /// </summary>
         void OnInjected();
     }
