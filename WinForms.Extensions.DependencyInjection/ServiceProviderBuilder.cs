@@ -4,18 +4,19 @@ using System;
 namespace WinForms.Extensions.DependencyInjection.Bootstrap
 {
     /// <summary>
-    /// Proporciona métodos de extensión para construir un ServiceProvider compatible con aplicaciones WinForms.
+    /// Provides extension methods to build an <see cref="IServiceProvider"/> 
+    /// tailored for use in WinForms applications.
     /// </summary>
     public static class ServiceProviderBuilder
     {
         /// <summary>
-        /// Construye un IServiceProvider listo para usarse en una aplicación WinForms.
+        /// Builds an <see cref="IServiceProvider"/> ready to be used in a WinForms application.
         /// </summary>
-        /// <param name="services">La colección de servicios a registrar.</param>
-        /// <returns>Un IServiceProvider configurado.</returns>
+        /// <param name="services">The service collection to register dependencies.</param>
+        /// <returns>A configured <see cref="IServiceProvider"/> instance.</returns>
         public static IServiceProvider BuildWinFormsServiceProvider(this IServiceCollection services)
         {
-            // Aquí podrías registrar servicios específicos de WinForms si fuera necesario
+            // Here you could add WinForms specific service registrations if needed
             return services.BuildServiceProvider();
         }
     }
