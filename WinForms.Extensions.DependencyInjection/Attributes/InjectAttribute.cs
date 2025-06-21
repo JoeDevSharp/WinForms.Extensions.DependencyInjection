@@ -3,8 +3,8 @@
 namespace WinForms.Extensions.DependencyInjection.Attributes
 {
     /// <summary>
-    /// Marca una propiedad para que sea inyectada automáticamente desde el contenedor DI.
-    /// Útil cuando el constructor no puede usarse (por ejemplo, en formularios diseñados por WinForms Designer).
+    /// Marks a property for automatic injection from the DI container.
+    /// Useful when constructor injection is not possible (e.g., in forms designed with the WinForms Designer).
     /// </summary>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false)]
     public class InjectAttribute : Attribute
