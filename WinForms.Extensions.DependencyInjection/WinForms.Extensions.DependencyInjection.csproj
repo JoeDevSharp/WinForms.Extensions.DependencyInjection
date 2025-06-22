@@ -6,7 +6,29 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <PackageId>JoeDevSharp.$(AssemblyName)</PackageId>
+    <Title>$(AssemblyName)</Title>
+    <Version>1.0.1</Version>
+    <Authors>JoeDevSharp</Authors>
+    <Description>Advanced Dependency Injection (DI) integration tailored for Windows Forms applications. Built on top of `Microsoft.Extensions.DependencyInjection`, but adapted and extended to address WinForms-specific development needs.</Description>
+    <PackageProjectUrl>https://github.com/JoeDevSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/JoeDevSharp</RepositoryUrl>
+    <PackageIcon>JoeDevSharp.WinForms.Extensions.icon(1).png</PackageIcon>
+    <PackageTags>WinForms; Dependency Injection; DI; Microsoft.Extensions.DependencyInjection; Reactive Programming; RouteManager; Scoped Services; Property Injection; .NET; Windows Forms; MVVM; Software Modernization; Legacy Systems; Industrial Software; Desktop Applications; Software Architecture; Form Factory; IServiceProvider; IInjectable; Open Source; CSharp; .NET Framework; Application Lifecycle; UI Binding; Modular Design; Code Maintainability; Software Engineering</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\..\iCloudDrive\JoeDev\Logos\JoeDevSharp.WinForms.Extensions.icon(1).png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.6" />
